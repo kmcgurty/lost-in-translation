@@ -13,5 +13,8 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-gh-pages": "^1.1.0",
     "grunt-http-server": "~1.13.0"
+  },
+  "scripts": {
+    "deploy": "git subtree push --prefix build origin gh-pages"
   }
 }
