@@ -1,7 +1,27 @@
-.wrapper { width: 25%; margin: auto; text-align: center; }
+.wrapper {
+  width: 25%;
+  margin: auto;
+  text-align: center; }
 
-.loading-bar-wrapper { height: 15px; width: 250px; background-color: #ECECEC; margin-left: auto; margin-right: auto; margin-top: 5px; }
+form {
+  display: block; }
 
-.loading-bar-text { position: relative; }
+.loading-bar {
+  height: 15px;
+  width: 250px;
+  background-color: #ECECEC;
+  margin-left: calc(50% - 125px);
+  margin-top: 5px; }
 
-.loading-bar { background-color: blue; height: 100%; width: 0px; }
+.results {
+  background-color: #80808017;
+  width: 250px;
+  margin-left: calc(50% - 125px); }
+
+.bar {
+  background-color: cyan;
+  color: black;
+  display: inline;
+  float: left;
+  height: 100%;
+  width: 0%; }
