@@ -51,6 +51,9 @@ function translateLoop() {
     } else if (loopNum <= maxLoops) { //translate one more time back to english
         translate("en");
         loopNum++;
+
+        var bar = document.querySelector(".bar");
+        bar.innerHTML = "Done";
     }
 }
 
