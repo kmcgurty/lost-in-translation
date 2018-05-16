@@ -39,8 +39,6 @@ function translate(targetLanguage) {
     }).error(function(data) {
         console.log(data);
     });
-
-    console.log(translations);
 }
 
 
@@ -48,12 +46,9 @@ function translateLoop() {
     if (loopNum < maxLoops) {
         translate(undefined);
         loopNum++;
-    } else if (loopNum <= maxLoops) { //translate one more time back to english
+    } else if (loopNum == maxLoops) { //translate one more time back to english
         translate("en");
         loopNum++;
-
-        var bar = document.querySelector(".bar");
-        bar.innerHTML = "Done";
     }
 }
 
@@ -64,18 +59,17 @@ function updateLoadingbar() {
 
     bar.innerHTML = "Loading...";
     bar.style.width = steps * 100 + "%";
+
+    if (loopNum > maxLoops) {
+        bar.innerHTML = "Done";
+    }
 }
 
 function displayResults() {
-    var bar = document.querySelector(".bar");
-    bar.innerHTML = "Loading...";
-
     var resultsDiv = document.querySelector(".results");
     var last = translations.length - 1;
 
-    var html = translations[last].translation + " - " + translations[last].language;
-
-    resultsDiv.innerHTML = html;
+    resultsDiv.innerHTML = translations[last].translation;
 }
 
 document.querySelector("form").addEventListener("submit", function(event) {
